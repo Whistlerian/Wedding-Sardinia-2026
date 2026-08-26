@@ -128,6 +128,28 @@
       .text-link { font: 600 10px/1.3 var(--sans); color: var(--gold); letter-spacing: 1.4px; text-decoration: none; text-transform: uppercase; }
       .text-link:hover { color: var(--deep); }
 
+      .bases { background: #eef0eb; padding: 84px 0 92px; }
+      .base-tabs { display: flex; overflow-x: auto; border-top: 1px solid #d5dad1; border-bottom: 1px solid #d5dad1; }
+      .base-tab { flex: 1 0 142px; border: 0; border-right: 1px solid #d5dad1; background: transparent; color: var(--muted); cursor: pointer; padding: 15px 13px 13px; text-align: left; transition: .2s ease; }
+      .base-tab:last-child { border-right: 0; }
+      .base-tab:hover, .base-tab.active { background: var(--deep); color: #fff; }
+      .base-tab span { display: block; font: 600 10px/1.35 var(--sans); letter-spacing: 1.15px; text-transform: uppercase; }
+      .base-panel { display: none; grid-template-columns: minmax(230px, .72fr) minmax(0, 1.65fr); gap: 48px; padding-top: 37px; }
+      .base-panel.active { display: grid; }
+      .base-panel[hidden] { display: none; }
+      .base-intro { border-right: 1px solid #d5dad1; padding-right: 42px; }
+      .base-kicker { color: var(--gold); font: 600 10px/1.4 var(--sans); letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 10px; }
+      .base-intro h3 { color: var(--deep); font: 500 48px/.9 var(--display); margin: 0 0 15px; }
+      .base-intro > p:not(.base-kicker) { color: #5f645b; font-size: 20px; line-height: 1.32; margin-bottom: 17px; }
+      .base-note { border-top: 1px solid #d5dad1; color: var(--muted); font: 500 12px/1.45 var(--sans); padding-top: 14px; }
+      .base-recommendations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+      .base-recommendation { border-top: 1px solid var(--gold); color: inherit; display: block; min-height: 178px; padding: 18px 0 0; text-decoration: none; }
+      .base-recommendation:hover strong, .base-recommendation:hover .base-link { color: var(--deep); }
+      .base-type { color: var(--gold); display: block; font: 600 9px/1.4 var(--sans); letter-spacing: 1.25px; margin-bottom: 15px; text-transform: uppercase; }
+      .base-recommendation strong { color: var(--deep); display: block; font: 500 29px/.98 var(--display); margin-bottom: 8px; transition: .2s ease; }
+      .base-recommendation p { color: var(--muted); font-size: 16px; line-height: 1.35; margin-bottom: 14px; }
+      .base-link { color: var(--gold); font: 600 9px/1.4 var(--sans); letter-spacing: 1.1px; text-transform: uppercase; transition: .2s ease; }
+
       .places { background: #e9e5dd; padding: 84px 0 94px; }
       .place-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 29px; }
       .place-filter { border: 1px solid #cfc7ba; background: transparent; min-height: 36px; padding: 0 13px; color: #62655e; font: 600 10px var(--sans); letter-spacing: 1.15px; text-transform: uppercase; cursor: pointer; transition: .2s ease; }
@@ -168,7 +190,7 @@
         .hero { min-height: 640px; }
         .hero-content { padding: 100px 0 38px; }
         h1 { font-size: clamp(49px, 15vw, 80px); }
-        .intro, .agenda, .editors, .places, .essentials { padding: 62px 0; }
+        .intro, .agenda, .editors, .bases, .places, .essentials { padding: 62px 0; }
         .intro-grid, .split-header, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
         .quick-facts { grid-column: auto; }
         .section-head { display: block; }
@@ -179,7 +201,11 @@
         .day-number { font-size: 51px; }
         .day-number span { display: inline; margin-left: 10px; vertical-align: middle; }
         .event-card { min-height: 0; }
-        .ideas-grid, .places-grid { grid-template-columns: 1fr; }
+        .ideas-grid, .places-grid, .base-recommendations { grid-template-columns: 1fr; }
+        .base-tab { flex-basis: 154px; }
+        .base-panel { grid-template-columns: 1fr; gap: 25px; }
+        .base-intro { border-right: 0; border-bottom: 1px solid #d5dad1; padding: 0 0 23px; }
+        .base-recommendation { min-height: 0; }
         .split-header p:last-child { margin-top: 0; }
         .footer-grid { display: block; }
         .footer-note { text-align: left; margin-top: 25px; }
@@ -231,6 +257,111 @@
             <div class="fact"><b>3</b><span>Zonas clave<br />Olbia · Costa Smeralda · Gallura</span></div>
             <div class="fact"><b>Coche</b><span>La forma más cómoda<br />de moveros</span></div>
           </div>
+        </div>
+      </section>
+
+      <section class="bases" id="alojamiento" aria-labelledby="alojamiento-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="section-label">La guía empieza aquí</p>
+              <h2 class="section-title" id="alojamiento-title">Desde donde<br />dormís</h2>
+            </div>
+            <p class="section-intro">Elegid vuestra zona: no es lo mismo despertar junto al puerto de Olbia que entre el granito de Monticanaglia. Cada base tiene su mejor día.</p>
+          </div>
+
+          <div class="base-tabs" role="tablist" aria-label="Recomendaciones por zona de alojamiento">
+            <button class="base-tab active" role="tab" aria-selected="true" aria-controls="base-olbia" id="base-tab-olbia" data-base="olbia"><span>Olbia</span></button>
+            <button class="base-tab" role="tab" aria-selected="false" aria-controls="base-porto-san-paolo" id="base-tab-porto-san-paolo" data-base="porto-san-paolo"><span>Porto San Paolo</span></button>
+            <button class="base-tab" role="tab" aria-selected="false" aria-controls="base-pittulongu" id="base-tab-pittulongu" data-base="pittulongu"><span>Pittulongu</span></button>
+            <button class="base-tab" role="tab" aria-selected="false" aria-controls="base-san-pantaleo" id="base-tab-san-pantaleo" data-base="san-pantaleo"><span>San Pantaleo</span></button>
+            <button class="base-tab" role="tab" aria-selected="false" aria-controls="base-arzachena" id="base-tab-arzachena" data-base="arzachena"><span>Arzachena</span></button>
+            <button class="base-tab" role="tab" aria-selected="false" aria-controls="base-monticanaglia" id="base-tab-monticanaglia" data-base="monticanaglia"><span>Monticanaglia</span></button>
+          </div>
+
+          <article class="base-panel active" id="base-olbia" role="tabpanel" aria-labelledby="base-tab-olbia">
+            <div class="base-intro">
+              <p class="base-kicker">Olbia</p>
+              <h3>Ciudad, puerto y llegada fácil</h3>
+              <p>La base más cómoda para aterrizar, hacer recados y salir a cenar. Es la opción para alternar el centro histórico con playas de la costa de Olbia sin convertir cada plan en una expedición.</p>
+              <p class="base-note">Mejor momento: llegada y última tarde antes del vuelo. El centro funciona especialmente bien para una vuelta sin coche.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.helloolbia.com/esperienze/"><span class="base-type">Paseo urbano</span><strong>Centro histórico y Corso Umberto</strong><p>Cafés, pequeñas tiendas y calles para estirar las piernas después del viaje.</p><span class="base-link">Ver guía de Olbia</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.helloolbia.com/esperienze/"><span class="base-type">Un rato de historia</span><strong>Museo Arqueológico</strong><p>Una parada interesante si preferís ciudad antes que otra tarde entera de playa.</p><span class="base-link">Ver experiencia</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.helloolbia.com/spiaggia-di-pittulongu/"><span class="base-type">Baño cercano</span><strong>Pittulongu</strong><p>La playa de diario de Olbia, con servicios y vista hacia Tavolara.</p><span class="base-link">Ver playa</span></a>
+            </div>
+          </article>
+
+          <article class="base-panel" id="base-porto-san-paolo" role="tabpanel" aria-labelledby="base-tab-porto-san-paolo" hidden>
+            <div class="base-intro">
+              <p class="base-kicker">Porto San Paolo</p>
+              <h3>Tavolara es vuestro patio de recreo</h3>
+              <p>La mejor base para hacer una excursión de mar sin cambiar de costa. Aquí el plan ganador es embarcar, nadar y volver a cenar sin una larga vuelta en coche.</p>
+              <p class="base-note">Mejor momento: domingo 6. Reservad la salida en barco y confirmad el estado del mar la víspera.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://visitportosanpaolo.com/en/thing-to-do/"><span class="base-type">Excursión</span><strong>Tavolara y Molara</strong><p>Desde el puerto salen ferris y embarcaciones para llegar a las islas y sus fondos.</p><span class="base-link">Ver opciones de mar</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://visitportosanpaolo.com/en/beaches-in-porto-san-paolo/"><span class="base-type">Playa</span><strong>Porto Istana o Costa Corallina</strong><p>Dos alternativas de costa a las que dedicar una mañana, con realidades muy distintas.</p><span class="base-link">Comparar playas</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://visitportosanpaolo.com/en/where-to-eat/"><span class="base-type">Mesa local</span><strong>Cenar cerca del puerto</strong><p>El consorcio local reúne desde restaurantes de playa hasta cocina sarda y opciones más informales.</p><span class="base-link">Ver dónde comer</span></a>
+            </div>
+          </article>
+
+          <article class="base-panel" id="base-pittulongu" role="tabpanel" aria-labelledby="base-tab-pittulongu" hidden>
+            <div class="base-intro">
+              <p class="base-kicker">Pittulongu</p>
+              <h3>Playa fácil, sin renunciar a Olbia</h3>
+              <p>Es la base para despertarse con arena cerca y tener la ciudad a mano. Sus playas enlazadas permiten un día de mar flexible, sin reservar una excursión ni cruzar media isla.</p>
+              <p class="base-note">Mejor momento: una mañana libre o el día 2. Elegid un tramo y guardad la sobremesa para el mar.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.sardegnaturismo.it/it/node/15080?language=it"><span class="base-type">Playa principal</span><strong>La Playa</strong><p>Arena clara, fondo suave, servicios y vista a Tavolara: una elección fácil para grupos y familias.</p><span class="base-link">Ficha oficial</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.trattoriarossi.it/"><span class="base-type">Comer frente al mar</span><strong>Trattoria Rossi</strong><p>Mesa marinera en Pittulongu para que el plan no tenga más desplazamiento que bajar a la playa.</p><span class="base-link">Visitar restaurante</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.trattoriailmare.it/"><span class="base-type">Cena tranquila</span><strong>Trattoria Il Mare</strong><p>Otra dirección de cocina de mar en Mare e Rocce, junto a los tramos de playa de Pittulongu.</p><span class="base-link">Ver restaurante</span></a>
+            </div>
+          </article>
+
+          <article class="base-panel" id="base-san-pantaleo" role="tabpanel" aria-labelledby="base-tab-san-pantaleo" hidden>
+            <div class="base-intro">
+              <p class="base-kicker">San Pantaleo</p>
+              <h3>Granito, plaza y el jueves perfecto</h3>
+              <p>Un pueblo pequeño de ambiente artístico, rodeado de rocas y muy bien colocado para moverse hacia la Costa Smeralda. No hace falta llenarlo de planes: su encanto está en hacerlo despacio.</p>
+              <p class="base-note">Mejor momento: jueves 3 por la mañana. El mercado de verano funciona de 08:00 a 13:00.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://sanpantaleo.com/market/"><span class="base-type">Jueves 3</span><strong>Mercado de artistas</strong><p>Artesanía, cerámica, textiles y productos locales: llegad pronto y pasead sin agenda apretada.</p><span class="base-link">Ver mercado</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://sanpantaleo.com/things-to-do/"><span class="base-type">Tarde de cala</span><strong>Liscia Ruja, Petra Ruja o Razza di Juncu</strong><p>Desde esta base es sencillo elegir una cala de Costa Smeralda para pasar la tarde.</p><span class="base-link">Ver calas cercanas</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://sanpantaleo.com/where-to-eat-san-pantaleo-costa-smeralda/"><span class="base-type">Cena especial</span><strong>Del café de plaza a Il Fuoco Sacro</strong><p>La guía local distingue bien entre un aperitivo informal y una reserva gastronómica de verdad.</p><span class="base-link">Ver selección local</span></a>
+            </div>
+          </article>
+
+          <article class="base-panel" id="base-arzachena" role="tabpanel" aria-labelledby="base-tab-arzachena" hidden>
+            <div class="base-intro">
+              <p class="base-kicker">Arzachena</p>
+              <h3>La Gallura que no sale en la postal</h3>
+              <p>Es la base ideal para cambiar una tarde de costa por paisaje, arqueología, vino y cocina galluresa. Aquí tiene sentido buscar granito, stazzi y sobremesas largas.</p>
+              <p class="base-note">Mejor momento: lunes 7, o una mañana sin boda. Reservad las visitas y degustaciones con antelación.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://arzachenaturismo.com/contenuti/427954/sentiero-giganti-vita-morte-tempo-nuraghi"><span class="base-type">Arqueología</span><strong>La Prisgiona y Coddu Ecchju</strong><p>El Sendero de los Gigantes conecta dos de los grandes sitios del parque arqueológico de Arzachena.</p><span class="base-link">Ver recorrido</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.vignesurrau.it/it/contatti"><span class="base-type">Vino</span><strong>Vigne Surrau</strong><p>Visita y degustación entre Arzachena y Porto Cervo. Para septiembre, la bodega pide reserva previa.</p><span class="base-link">Reservar degustación</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/es/restaurante"><span class="base-type">Agriturismo</span><strong>Tenuta Pilastru</strong><p>Una apuesta de cocina galluresa con producto propio, perfecta para un almuerzo de despedida.</p><span class="base-link">Ver restaurante</span></a>
+            </div>
+          </article>
+
+          <article class="base-panel" id="base-monticanaglia" role="tabpanel" aria-labelledby="base-tab-monticanaglia" hidden>
+            <div class="base-intro">
+              <p class="base-kicker">Monticanaglia</p>
+              <h3>Silencio de campo, con una ruta pensada</h3>
+              <p>Esta base es Gallura interior: más tranquila y menos de salir andando a cenar. A cambio, queda muy bien situada para combinar Arzachena, bodegas, San Pantaleo y la Costa Smeralda en días separados.</p>
+              <p class="base-note">Clave práctica: coche o traslado organizado. El municipio conecta la zona en las líneas estivales de Lu Pustali.</p>
+            </div>
+            <div class="base-recommendations">
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://www.comune.arzachena.ss.it/servizi/mobilita-e-trasporti/trasporto-comunale"><span class="base-type">Moverse</span><strong>Lu Pustali</strong><p>El transporte municipal incluye Monticanaglia en sus líneas rosa y estival Smeralda; consultad los horarios de vuestra fecha.</p><span class="base-link">Ver servicio 2026</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://arzachenaturismo.com/contenuti/427983/tomba-giganti-coddu-ecchiu"><span class="base-type">Mañana distinta</span><strong>Coddu Ecchju</strong><p>Una tumba de gigantes muy bien conservada para entender que esta zona es mucho más que playa.</p><span class="base-link">Ver sitio arqueológico</span></a>
+              <a class="base-recommendation" target="_blank" rel="noopener" href="https://arzachenaturismo.com/contenuti/1290824/cantine"><span class="base-type">Tarde de vino</span><strong>Ruta de bodegas</strong><p>El portal de Arzachena recoge Vigne Surrau, Lu Beddu y otras visitas con reserva previa.</p><span class="base-link">Ver bodegas</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -357,8 +488,10 @@
           <h2 class="section-title" id="mesas-title">Comer bien,<br />de verdad</h2>
           <div class="place-tabs" aria-label="Filtrar lugares">
             <button class="place-filter active" data-filter="all">Todo</button>
-            <button class="place-filter" data-filter="gallura">Gallura</button>
-            <button class="place-filter" data-filter="olbia">Olbia y sur</button>
+            <button class="place-filter" data-filter="olbia">Olbia + Pittulongu</button>
+            <button class="place-filter" data-filter="porto">Porto San Paolo</button>
+            <button class="place-filter" data-filter="pantaleo">San Pantaleo</button>
+            <button class="place-filter" data-filter="gallura">Arzachena + Monticanaglia</button>
             <button class="place-filter" data-filter="costa">Costa Smeralda</button>
           </div>
           <div class="places-grid">
@@ -366,10 +499,16 @@
             <article class="place" data-area="costa"><div class="place-top"><div><h3>La Pasqualina</h3><p>Porto Cervo · Promenade du Port</p></div><span class="tag">Helado + paseo</span></div><p>Helado artesanal y pastelería en pleno puerto. La parada ideal antes de una vuelta tranquila por el waterfront de Porto Cervo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.lapasqualina.it/i-locali/">Ver local</a></article>
             <article class="place" data-area="costa"><div class="place-top"><div><h3>Sole e Mare</h3><p>Baja Sardinia · a pie de playa</p></div><span class="tag">Mar sin ceremonia</span></div><p>Pasta, pizza y pescado frente al mar. Una elección fácil para el día de la White Party o una cena relajada en Baja Sardinia.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.bajasardiniafoodandwine.it/en/sole-e-mare-ristorante-pizzeria/">Visitar web</a></article>
             <article class="place" data-area="costa"><div class="place-top"><div><h3>La Rocca da Chiara</h3><p>Pulicinu · Baja Sardinia</p></div><span class="tag">Cena larga</span></div><p>Un clásico cerca de Baja con jardín, pescado, carne y pizza. Buena mesa para sentarse a cenar sin el ritmo acelerado del puerto.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.ristorante-larocca.com/">Reservar mesa</a></article>
-            <article class="place" data-area="gallura"><div class="place-top"><div><h3>Tenuta Pilastru</h3><p>Arzachena · Gallura</p></div><span class="tag">Agriturismo</span></div><p>La mesa de interior para probar Gallura de verdad: carnes, vinos y pasta de producción propia entre granito y campo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/es/restaurante">Visitar web</a></article>
-            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Sa Crescia Ezza</h3><p>Berchiddeddu · Olbia</p></div><span class="tag">Agriturismo</span></div><p>Cocina de finca a poca distancia de Olbia, con menú tradicional gallurés y alternativas que se pueden adaptar bajo reserva.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.sacresciaezza.com/cucina/">Ver cocina</a></article>
+            <article class="place" data-area="gallura monticanaglia"><div class="place-top"><div><h3>Tenuta Pilastru</h3><p>Arzachena · Gallura</p></div><span class="tag">Agriturismo</span></div><p>La mesa de interior para probar Gallura de verdad: carnes, vinos y pasta de producción propia entre granito y campo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/es/restaurante">Visitar web</a></article>
+            <article class="place" data-area="olbia gallura"><div class="place-top"><div><h3>Sa Crescia Ezza</h3><p>Berchiddeddu · Olbia</p></div><span class="tag">Agriturismo</span></div><p>Cocina de finca con menú tradicional gallurés y alternativas que se pueden adaptar bajo reserva. Una buena excursión de mesa para quien quiera salir de la costa.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.sacresciaezza.com/cucina/">Ver cocina</a></article>
+            <article class="place" data-area="olbia pittulongu"><div class="place-top"><div><h3>Trattoria Rossi</h3><p>Pittulongu · frente al mar</p></div><span class="tag">Pescado</span></div><p>Dirección de playa para una comida de pescado sin alejarse de Pittulongu. Encaja con un baño largo y sin un plan rígido detrás.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.trattoriarossi.it/">Visitar restaurante</a></article>
+            <article class="place" data-area="olbia pittulongu"><div class="place-top"><div><h3>Trattoria Il Mare</h3><p>Mare e Rocce · Pittulongu</p></div><span class="tag">Cena de costa</span></div><p>Cocina de mar en la zona de Mare e Rocce. Una alternativa natural para cenar cerca del alojamiento y volver pronto.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.trattoriailmare.it/">Ver restaurante</a></article>
+            <article class="place" data-area="porto"><div class="place-top"><div><h3>Comer en Porto San Paolo</h3><p>Puerto · Porto Taverna · Monte Petrosu</p></div><span class="tag">Guía local</span></div><p>El consorcio de Tavolara selecciona mesas de pueblo, playa y puerto. Elegid según el plan de mar del día y confirmad la reserva.</p><a class="text-link" target="_blank" rel="noopener" href="https://visitportosanpaolo.com/en/where-to-eat/">Ver selección local</a></article>
+            <article class="place" data-area="pantaleo"><div class="place-top"><div><h3>Caffè Nina</h3><p>San Pantaleo · Piazza della Chiesa</p></div><span class="tag">Café + aperitivo</span></div><p>Una parada de plaza para empezar el jueves de mercado o dejar que caiga la tarde en el pueblo antes de cenar.</p><a class="text-link" target="_blank" rel="noopener" href="https://sanpantaleo.com/where-to-eat-san-pantaleo-costa-smeralda/">Ver selección local</a></article>
+            <article class="place" data-area="pantaleo"><div class="place-top"><div><h3>Il Fuoco Sacro</h3><p>San Pantaleo · Petra Segreta</p></div><span class="tag">Cena especial</span></div><p>Para una noche de alta gastronomía, con reserva muy anticipada. La guía local lo recomienda como la reserva con intención de la zona.</p><a class="text-link" target="_blank" rel="noopener" href="https://sanpantaleo.com/where-to-eat-san-pantaleo-costa-smeralda/">Ver guía y reserva</a></article>
+            <article class="place" data-area="gallura monticanaglia"><div class="place-top"><div><h3>Vigne Surrau</h3><p>Arzachena · Località Chilvagghja</p></div><span class="tag">Vino + aperitivo</span></div><p>Una visita de bodega para alternar mar y campo, con degustaciones que requieren reserva. Plan muy natural desde Arzachena o Monticanaglia.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.vignesurrau.it/it/contatti">Reservar visita</a></article>
           </div>
-          <p class="place-note">No son sitios puestos al azar: contrastamos cartas, ubicación y referencias editoriales locales. Aun así, septiembre sigue siendo temporada: reservad con antelación y confirmad horarios directamente con cada sitio.</p>
+          <p class="place-note">No son sitios puestos al azar: contrastamos ubicación, fuente oficial o guía local y página del propio negocio. Aun así, septiembre sigue siendo temporada: reservad con antelación y confirmad horarios directamente con cada sitio.</p>
         </div>
       </section>
 
@@ -427,6 +566,24 @@
         });
       });
 
+      const baseTabs = document.querySelectorAll('.base-tab');
+      const basePanels = document.querySelectorAll('.base-panel');
+      baseTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const base = tab.dataset.base;
+          baseTabs.forEach((item) => {
+            const selected = item === tab;
+            item.classList.toggle('active', selected);
+            item.setAttribute('aria-selected', selected);
+          });
+          basePanels.forEach((panel) => {
+            const selected = panel.id === `base-${base}`;
+            panel.classList.toggle('active', selected);
+            panel.hidden = !selected;
+          });
+        });
+      });
+
       const filters = document.querySelectorAll('.place-filter');
       const places = document.querySelectorAll('.place');
       filters.forEach((filter) => {
@@ -434,7 +591,7 @@
           const category = filter.dataset.filter;
           filters.forEach((item) => item.classList.toggle('active', item === filter));
           places.forEach((place) => {
-            place.hidden = category !== 'all' && place.dataset.area !== category;
+            place.hidden = category !== 'all' && !place.dataset.area.split(' ').includes(category);
           });
         });
       });
