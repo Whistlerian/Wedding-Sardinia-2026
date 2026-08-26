@@ -52,29 +52,26 @@
         padding: 24px 0;
         color: #fff;
       }
-      .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-      .monogram, .topnav, .eyebrow, .button, .day-date, .kicker, .event-time, .small-label, .tag, .map-link, .footer-note { font-family: var(--sans); }
-      .monogram { font-size: 12px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; text-decoration: none; }
-      .topnav { display: flex; gap: 23px; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; }
-      .topnav a { text-decoration: none; opacity: .9; }
-      .topnav a:hover { opacity: 1; }
+      .topbar .wrap { display: flex; justify-content: flex-start; align-items: center; }
+      .brand-lockup, .eyebrow, .button, .day-date, .kicker, .event-time, .small-label, .tag, .map-link, .footer-note { font-family: var(--sans); }
+      .brand-lockup { display: block; width: 185px; }
+      .brand-logo { display: block; width: 100%; height: auto; }
 
-      .hero { min-height: min(760px, 95vh); position: relative; color: #fff; display: grid; align-items: end; overflow: hidden; }
-      .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(24, 39, 37, .61) 0%, rgba(24, 39, 37, .29) 43%, rgba(24, 39, 37, .04) 76%), linear-gradient(0deg, rgba(20, 34, 32, .48), transparent 52%); z-index: 1; }
-      .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-      .hero-content { position: relative; z-index: 2; padding: 0 0 78px; max-width: 680px; }
-      .eyebrow { margin: 0 0 17px; font-size: 11px; letter-spacing: 3.2px; text-transform: uppercase; font-weight: 500; color: #f3ddc0; }
+      .hero { min-height: clamp(600px, 82vh, 730px); position: relative; color: #fff; display: grid; place-items: center; overflow: hidden; }
+      .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19, 27, 25, .49) 0%, rgba(19, 27, 25, .29) 44%, rgba(19, 27, 25, .58) 100%); z-index: 1; }
+      .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+      .hero-content { position: relative; z-index: 2; max-width: 760px; padding: 106px 0 42px; text-align: center; }
+      .eyebrow { margin: 0 0 18px; font-size: 10px; letter-spacing: 3.2px; text-transform: uppercase; font-weight: 600; color: #f6e4ca; }
       h1, h2, h3, p { margin-top: 0; }
-      h1 { font: 500 clamp(56px, 9vw, 112px)/.82 var(--display); letter-spacing: 0; margin-bottom: 25px; text-transform: uppercase; }
-      .hero h1 span { display: block; font-style: italic; text-transform: none; font-family: var(--serif); font-weight: 500; font-size: .68em; margin: 8px 0 0 13%; }
-      .hero-copy { font-size: clamp(20px, 2.4vw, 26px); max-width: 540px; line-height: 1.25; margin-bottom: 31px; }
+      h1 { font: 500 clamp(55px, 8vw, 100px)/.84 var(--display); letter-spacing: 1.4px; margin-bottom: 18px; text-transform: uppercase; }
+      .hero-names { margin: 0 0 17px; color: #f6e4ca; font: 500 clamp(27px, 3.2vw, 37px)/1 var(--serif); }
+      .hero-names span { display: block; margin-top: 10px; color: #fff; font: 600 10px/1 var(--sans); letter-spacing: 3px; }
+      .hero-copy { margin: 0 auto 27px; font-size: clamp(20px, 2.4vw, 25px); max-width: 540px; line-height: 1.25; }
       .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 45px; border: 1px solid transparent; padding: 0 18px; background: var(--white); color: var(--deep); font-size: 11px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 1.3px; transition: .2s ease; cursor: pointer; }
       .button:hover { transform: translateY(-2px); background: #f5eadc; }
       .button.ghost { color: #fff; border-color: rgba(255,255,255,.65); background: transparent; }
       .button.ghost:hover { color: var(--deep); background: #fff; }
-      .hero-buttons { display: flex; flex-wrap: wrap; gap: 11px; }
-      .hero-stamp { position: absolute; z-index: 2; right: max(24px, calc((100vw - 1180px) / 2)); bottom: 37px; width: 116px; height: 116px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; display: grid; place-content: center; text-align: center; font-family: var(--sans); font-size: 10px; line-height: 1.4; letter-spacing: 1.1px; text-transform: uppercase; transform: rotate(11deg); }
-      .hero-stamp strong { display: block; font: 500 29px/1 var(--serif); letter-spacing: 0; text-transform: none; }
+      .hero-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 11px; }
 
       .intro { padding: 88px 0 78px; }
       .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; align-items: start; }
@@ -167,12 +164,10 @@
 
       @media (max-width: 800px) {
         .wrap { width: min(100% - 34px, 1180px); }
-        .topnav { display: none; }
-        .hero { min-height: 690px; }
-        .hero-content { padding-bottom: 59px; }
-        h1 { font-size: clamp(53px, 17vw, 88px); }
-        .hero-stamp { width: 93px; height: 93px; bottom: 25px; font-size: 8px; right: 19px; }
-        .hero-stamp strong { font-size: 23px; }
+        .brand-lockup { width: 148px; }
+        .hero { min-height: 640px; }
+        .hero-content { padding: 100px 0 38px; }
+        h1 { font-size: clamp(49px, 15vw, 80px); }
         .intro, .agenda, .editors, .places, .essentials { padding: 62px 0; }
         .intro-grid, .split-header, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
         .quick-facts { grid-column: auto; }
@@ -200,29 +195,25 @@
   <body>
     <header class="topbar">
       <div class="wrap">
-        <a class="monogram" href="#inicio">Virginia &amp; Jose</a>
-        <nav class="topnav" aria-label="Navegación principal">
-          <a href="#agenda">Semana</a>
-          <a href="#planes">Planes</a>
-          <a href="#mesas">Mesas</a>
-          <a href="#practico">Práctico</a>
-        </nav>
+        <a class="brand-lockup" href="#inicio" aria-label="Virginia y José">
+          <img class="brand-logo" src="assets/virginia-jose-logo.png" alt="Virginia y José · 05.09.2026" />
+        </a>
       </div>
     </header>
 
     <main id="inicio">
       <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-media" src="assets/costa-smeralda-hero.png" alt="Cala de granito y agua turquesa en el norte de Cerdeña" />
+        <img class="hero-media" src="assets/virginia-jose-hero.jpg" alt="Virginia y José brindando junto a una piscina al atardecer" />
         <div class="wrap hero-content">
-          <p class="eyebrow">Guía de invitados · 2–7 septiembre 2026</p>
-          <h1 id="hero-title">Wedding<br />Sardinia <span>un poco más de Cerdeña</span></h1>
-          <p class="hero-copy">Una semana para llegar, bañarse, brindar y descubrir la Gallura a vuestro ritmo.</p>
+          <p class="eyebrow">Cerdeña · 2–7 de septiembre</p>
+          <h1 id="hero-title">Sardinian<br />Wedding</h1>
+          <p class="hero-names">Boda Virginia &amp; José <span>05 · 09 · 2026</span></p>
+          <p class="hero-copy">Sugerencias personales para la semana de nuestra boda.</p>
           <div class="hero-buttons">
             <a class="button" href="#agenda"><i data-lucide="calendar-days" aria-hidden="true"></i> Ver la semana</a>
             <a class="button ghost" href="#mesas"><i data-lucide="utensils" aria-hidden="true"></i> Dónde comer</a>
           </div>
         </div>
-        <div class="hero-stamp" aria-hidden="true">Costa Smeralda <strong>2026</strong> Sardegna</div>
       </section>
 
       <section class="intro wrap" aria-labelledby="bienvenida-title">
@@ -283,7 +274,7 @@
               <p class="summary">El jueves tiene un protagonista perfecto: el mercadillo de San Pantaleo por la mañana, y la White Party al caer la noche.</p>
               <ul class="plan-list">
                 <li><time>08:30</time><div><strong>Mercadillo de San Pantaleo</strong><p>Artesanía, cerámica, textiles y productos locales en las calles del pueblo. Mejor llegar pronto.</p></div></li>
-                <li><time>13:30</time><div><strong>Comida lenta y cala cercana</strong><p>San Pantaleo, Liscia Ruja o Cala Granu son buenas combinaciones sin alejarse de la Costa Smeralda.</p></div></li>
+                <li><time>13:30</time><div><strong>Sole e Mare y tarde de cala</strong><p>En Baja Sardinia, una mesa sin complicaciones y frente al mar antes de seguir con la playa o volver a descansar.</p></div></li>
                 <li><time>18:45</time><div><strong>Vuelta al alojamiento</strong><p>Tiempo para preparar el look blanco y salir con margen hacia Baja Sardinia.</p></div></li>
               </ul>
             </div>
@@ -297,7 +288,7 @@
               <p class="summary">Un día de playa breve o paseo por Porto Cervo antes de encontrarnos para tomar algo.</p>
               <ul class="plan-list">
                 <li><time>MAÑANA</time><div><strong>Playa de Capriccioli o del Príncipe</strong><p>Elegid una sola cala, llevad agua y no estiréis demasiado la sobremesa.</p></div></li>
-                <li><time>15:30</time><div><strong>Paseo por la marina de Porto Cervo</strong><p>Helado, cafés y tiendas alrededor del puerto; una buena transición antes del evento.</p></div></li>
+                <li><time>15:30</time><div><strong>La Pasqualina y paseo por el waterfront</strong><p>Un helado en la Promenade du Port y una vuelta por la marina antes de ir al encuentro.</p></div></li>
                 <li><time>16:30</time><div><strong>Camino al encuentro</strong><p>Dejad margen para aparcar y para cambiaros con tranquilidad.</p></div></li>
               </ul>
             </div>
@@ -362,8 +353,8 @@
 
       <section class="places" id="mesas" aria-labelledby="mesas-title">
         <div class="wrap">
-          <p class="section-label">Mesas que merecen el desvío</p>
-          <h2 class="section-title" id="mesas-title">Comer como<br />en Cerdeña</h2>
+          <p class="section-label">Una selección con criterio</p>
+          <h2 class="section-title" id="mesas-title">Comer bien,<br />de verdad</h2>
           <div class="place-tabs" aria-label="Filtrar lugares">
             <button class="place-filter active" data-filter="all">Todo</button>
             <button class="place-filter" data-filter="gallura">Gallura</button>
@@ -371,14 +362,14 @@
             <button class="place-filter" data-filter="costa">Costa Smeralda</button>
           </div>
           <div class="places-grid">
-            <article class="place" data-area="gallura"><div class="place-top"><div><h3>Tenuta Pilastru</h3><p>Arzachena · Gallura</p></div><span class="tag">Agriturismo</span></div><p>Una cena o comida de cocina galluresa entre granito y campo. Especialmente buena para el lunes, después de los eventos.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/">Visitar web</a></article>
-            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Sa Crescia Ezza</h3><p>Olbia · Berchiddeddu</p></div><span class="tag">Agriturismo</span></div><p>Producto de la finca y sabores tradicionales cerca de Olbia. Una opción muy cómoda si os alojáis o voláis desde allí.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.sacresciaezza.com/">Visitar web</a></article>
-            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Da Roberta</h3><p>Padru · Interior</p></div><span class="tag">Cocina local</span></div><p>Parada informal hacia el interior de Gallura para probar cocina casera y prolongar el plan de carretera sin ceremonias.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Da%20Roberta%20Padru%20Sardegna">Abrir en Maps</a></article>
-            <article class="place" data-area="costa"><div class="place-top"><div><h3>San Pantaleo</h3><p>San Pantaleo</p></div><span class="tag">Pueblo</span></div><p>Para tomar algo después de pasear por el pueblo o hacer una comida que no os obligue a alejaros de Porto Cervo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ristoranti%20San%20Pantaleo%20Sardegna">Ver restaurantes</a></article>
-            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Centro de Olbia</h3><p>Olbia</p></div><span class="tag">Aperitivo</span></div><p>Una apuesta fácil para la noche de llegada o el domingo: terraza, paseo por el centro y mesa sin tener que conducir demasiado.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ristoranti%20Centro%20Olbia">Ver en Maps</a></article>
-            <article class="place" data-area="costa"><div class="place-top"><div><h3>Porto Cervo</h3><p>Marina y piazzetta</p></div><span class="tag">Con vistas</span></div><p>Para un aperitivo con la luz de última hora antes del encuentro del viernes. Mejor reservar o llegar con margen.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Porto%20Cervo%20Marina">Abrir en Maps</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>Aruanã Churrascaria</h3><p>Poltu Quatu · Marina</p></div><span class="tag">Cena + copas</span></div><p>Rodizio brasileño, bar y música en directo en Poltu Quatu. Un plan redondo para cenar y luego seguir tomando algo en el puerto.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.poltuquatu.com/en/dining-drinks/aruan-churrascaria.html">Reservar mesa</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>La Pasqualina</h3><p>Porto Cervo · Promenade du Port</p></div><span class="tag">Helado + paseo</span></div><p>Helado artesanal y pastelería en pleno puerto. La parada ideal antes de una vuelta tranquila por el waterfront de Porto Cervo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.lapasqualina.it/i-locali/">Ver local</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>Sole e Mare</h3><p>Baja Sardinia · a pie de playa</p></div><span class="tag">Mar sin ceremonia</span></div><p>Pasta, pizza y pescado frente al mar. Una elección fácil para el día de la White Party o una cena relajada en Baja Sardinia.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.bajasardiniafoodandwine.it/en/sole-e-mare-ristorante-pizzeria/">Visitar web</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>La Rocca da Chiara</h3><p>Pulicinu · Baja Sardinia</p></div><span class="tag">Cena larga</span></div><p>Un clásico cerca de Baja con jardín, pescado, carne y pizza. Buena mesa para sentarse a cenar sin el ritmo acelerado del puerto.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.ristorante-larocca.com/">Reservar mesa</a></article>
+            <article class="place" data-area="gallura"><div class="place-top"><div><h3>Tenuta Pilastru</h3><p>Arzachena · Gallura</p></div><span class="tag">Agriturismo</span></div><p>La mesa de interior para probar Gallura de verdad: carnes, vinos y pasta de producción propia entre granito y campo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/es/restaurante">Visitar web</a></article>
+            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Sa Crescia Ezza</h3><p>Berchiddeddu · Olbia</p></div><span class="tag">Agriturismo</span></div><p>Cocina de finca a poca distancia de Olbia, con menú tradicional gallurés y alternativas que se pueden adaptar bajo reserva.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.sacresciaezza.com/cucina/">Ver cocina</a></article>
           </div>
-          <p class="place-note">En septiembre las mesas buenas siguen llenándose: reservad con antelación y confirmad horarios, días de apertura y opciones para alergias directamente con cada sitio.</p>
+          <p class="place-note">No son sitios puestos al azar: contrastamos cartas, ubicación y referencias editoriales locales. Aun así, septiembre sigue siendo temporada: reservad con antelación y confirmad horarios directamente con cada sitio.</p>
         </div>
       </section>
 
