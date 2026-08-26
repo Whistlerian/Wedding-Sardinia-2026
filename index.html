@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3f0" />
+    <meta
+      name="description"
+      content="Guía de planes, mesas y escapadas para la semana de boda en Cerdeña, del 2 al 7 de septiembre de 2026."
+    />
+    <title>Wedding Sardinia 2026 | Guía de invitados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cormorant:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f5f3f0;
+        --white: #ffffff;
+        --ink: #3e433d;
+        --muted: #71746d;
+        --sand: #d9c8ae;
+        --gold: #b8956a;
+        --sage: #7c8976;
+        --line: #e4dbcf;
+        --deep: #283a37;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --display: "Cormorant", Georgia, serif;
+        --sans: "DM Sans", Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      a { color: inherit; }
+      button { font: inherit; }
+      .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+      .topbar {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 3;
+        padding: 24px 0;
+        color: #fff;
+      }
+      .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+      .monogram, .topnav, .eyebrow, .button, .day-date, .kicker, .event-time, .small-label, .tag, .map-link, .footer-note { font-family: var(--sans); }
+      .monogram { font-size: 12px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; text-decoration: none; }
+      .topnav { display: flex; gap: 23px; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; }
+      .topnav a { text-decoration: none; opacity: .9; }
+      .topnav a:hover { opacity: 1; }
+
+      .hero { min-height: min(760px, 95vh); position: relative; color: #fff; display: grid; align-items: end; overflow: hidden; }
+      .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(24, 39, 37, .61) 0%, rgba(24, 39, 37, .29) 43%, rgba(24, 39, 37, .04) 76%), linear-gradient(0deg, rgba(20, 34, 32, .48), transparent 52%); z-index: 1; }
+      .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+      .hero-content { position: relative; z-index: 2; padding: 0 0 78px; max-width: 680px; }
+      .eyebrow { margin: 0 0 17px; font-size: 11px; letter-spacing: 3.2px; text-transform: uppercase; font-weight: 500; color: #f3ddc0; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { font: 500 clamp(56px, 9vw, 112px)/.82 var(--display); letter-spacing: 0; margin-bottom: 25px; text-transform: uppercase; }
+      .hero h1 span { display: block; font-style: italic; text-transform: none; font-family: var(--serif); font-weight: 500; font-size: .68em; margin: 8px 0 0 13%; }
+      .hero-copy { font-size: clamp(20px, 2.4vw, 26px); max-width: 540px; line-height: 1.25; margin-bottom: 31px; }
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 45px; border: 1px solid transparent; padding: 0 18px; background: var(--white); color: var(--deep); font-size: 11px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 1.3px; transition: .2s ease; cursor: pointer; }
+      .button:hover { transform: translateY(-2px); background: #f5eadc; }
+      .button.ghost { color: #fff; border-color: rgba(255,255,255,.65); background: transparent; }
+      .button.ghost:hover { color: var(--deep); background: #fff; }
+      .hero-buttons { display: flex; flex-wrap: wrap; gap: 11px; }
+      .hero-stamp { position: absolute; z-index: 2; right: max(24px, calc((100vw - 1180px) / 2)); bottom: 37px; width: 116px; height: 116px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; display: grid; place-content: center; text-align: center; font-family: var(--sans); font-size: 10px; line-height: 1.4; letter-spacing: 1.1px; text-transform: uppercase; transform: rotate(11deg); }
+      .hero-stamp strong { display: block; font: 500 29px/1 var(--serif); letter-spacing: 0; text-transform: none; }
+
+      .intro { padding: 88px 0 78px; }
+      .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; align-items: start; }
+      .section-label { font-family: var(--sans); font-size: 11px; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; margin: 0 0 13px; }
+      .lead-title { font: 500 clamp(39px, 5.5vw, 68px)/.92 var(--display); letter-spacing: 0; text-transform: uppercase; color: #4e504b; margin-bottom: 0; }
+      .intro-copy { padding-top: 11px; font-size: 23px; line-height: 1.38; color: #545850; }
+      .intro-copy em { color: var(--gold); }
+      .quick-facts { grid-column: 2; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); margin-top: 14px; }
+      .fact { padding: 21px 20px 0 0; border-right: 1px solid var(--line); }
+      .fact + .fact { padding-left: 20px; }
+      .fact:last-child { border-right: 0; }
+      .fact b { display: block; font: 500 27px/1.1 var(--display); color: var(--deep); margin-bottom: 4px; }
+      .fact span { display: block; font-family: var(--sans); color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+      .agenda { background: var(--white); padding: 84px 0 92px; }
+      .section-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 39px; }
+      .section-title { font: 500 clamp(41px, 5vw, 64px)/.9 var(--display); color: #4e504b; text-transform: uppercase; margin: 0; }
+      .section-intro { max-width: 390px; color: var(--muted); font-size: 18px; line-height: 1.35; margin-bottom: 3px; }
+      .day-tabs { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .day-tab { appearance: none; border: 0; border-right: 1px solid var(--line); background: transparent; padding: 16px 8px 14px; min-height: 78px; color: var(--muted); cursor: pointer; text-align: left; transition: .2s ease; }
+      .day-tab:last-child { border-right: 0; }
+      .day-tab:hover, .day-tab.active { background: #f5f1ea; color: var(--deep); }
+      .day-date { display: block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+      .day-name { display: block; font-size: 28px; line-height: .9; font-family: var(--display); }
+      .day-panel { display: none; grid-template-columns: 160px minmax(0, 1.45fr) minmax(250px, .8fr); gap: 37px; padding: 38px 0 0; }
+      .day-panel.active { display: grid; }
+      .day-number { font: 500 67px/.77 var(--display); color: var(--sand); }
+      .day-number span { display: block; margin-top: 17px; color: var(--gold); font: 600 10px/1.35 var(--sans); letter-spacing: 2px; text-transform: uppercase; }
+      .day-panel h3 { font: 500 38px/1 var(--display); color: var(--deep); margin-bottom: 8px; }
+      .day-panel .summary { font-size: 21px; line-height: 1.35; color: #555950; margin-bottom: 18px; }
+      .plan-list { padding: 0; list-style: none; margin: 0; }
+      .plan-list li { display: grid; grid-template-columns: 73px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+      .plan-list time { font: 600 10px/1.5 var(--sans); color: var(--gold); letter-spacing: 1px; }
+      .plan-list strong { display: block; color: var(--ink); font-size: 19px; font-weight: 600; line-height: 1.15; }
+      .plan-list p { color: var(--muted); font-size: 16px; line-height: 1.32; margin: 3px 0 0; }
+      .event-card { background: var(--deep); color: #fff; padding: 24px; align-self: start; min-height: 100%; }
+      .event-card .small-label { color: #e4c79f; font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 18px; }
+      .event-card h4 { font: 500 31px/1 var(--display); margin: 0 0 12px; }
+      .event-time { font-size: 11px; letter-spacing: 1px; color: #e9e6dc; margin-bottom: 13px; }
+      .event-card p { color: #d5d7d0; font-size: 16px; line-height: 1.35; margin-bottom: 18px; }
+      .map-link { display: inline-flex; align-items: center; gap: 7px; color: #f0d7b4; font-size: 10px; font-weight: 600; letter-spacing: 1.1px; text-decoration: none; text-transform: uppercase; }
+      .map-link:hover { color: #fff; }
+
+      .editors { padding: 91px 0 96px; }
+      .split-header { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; margin-bottom: 39px; }
+      .split-header .section-title { max-width: 420px; }
+      .split-header p:last-child { margin: 31px 0 0; font-size: 21px; color: var(--muted); line-height: 1.33; }
+      .ideas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .idea { border-top: 1px solid var(--gold); padding: 21px 2px 0; }
+      .idea-icon { color: var(--gold); margin-bottom: 23px; }
+      .idea-icon svg { width: 25px; height: 25px; stroke-width: 1.4; }
+      .idea h3 { font: 500 33px/1 var(--display); color: var(--deep); margin-bottom: 8px; }
+      .idea p { color: var(--muted); font-size: 17px; line-height: 1.4; margin-bottom: 18px; }
+      .text-link { font: 600 10px/1.3 var(--sans); color: var(--gold); letter-spacing: 1.4px; text-decoration: none; text-transform: uppercase; }
+      .text-link:hover { color: var(--deep); }
+
+      .places { background: #e9e5dd; padding: 84px 0 94px; }
+      .place-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 29px; }
+      .place-filter { border: 1px solid #cfc7ba; background: transparent; min-height: 36px; padding: 0 13px; color: #62655e; font: 600 10px var(--sans); letter-spacing: 1.15px; text-transform: uppercase; cursor: pointer; transition: .2s ease; }
+      .place-filter.active, .place-filter:hover { background: var(--deep); border-color: var(--deep); color: #fff; }
+      .places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .place { background: rgba(255,255,255,.76); padding: 22px; min-height: 238px; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.45); }
+      .place[hidden] { display: none; }
+      .place-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+      .place h3 { font: 500 30px/1 var(--display); color: var(--deep); margin: 0 0 7px; }
+      .tag { flex: 0 0 auto; color: var(--gold); font-size: 9px; letter-spacing: 1.1px; text-transform: uppercase; }
+      .place p { color: #656860; font-size: 17px; line-height: 1.32; margin: 0 0 18px; }
+      .place .text-link { margin-top: auto; }
+      .place-note { margin: 26px 0 0; color: var(--muted); font-size: 15px; }
+
+      .essentials { padding: 92px 0; background: var(--white); }
+      .essentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+      .essentials h2 { font: 500 51px/.9 var(--display); color: var(--deep); text-transform: uppercase; margin-bottom: 21px; }
+      .essentials p { color: var(--muted); font-size: 19px; line-height: 1.38; }
+      .check-list { margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .check-list li { padding: 13px 0; border-bottom: 1px solid var(--line); display: flex; gap: 12px; align-items: start; color: #555950; font-size: 18px; line-height: 1.28; }
+      .check-list svg { flex: 0 0 auto; color: var(--gold); width: 17px; height: 17px; margin-top: 3px; stroke-width: 1.5; }
+      .calendar { background: var(--deep); color: #fff; padding: 34px; align-self: start; }
+      .calendar .section-label { color: #e4c79f; }
+      .calendar h3 { font: 500 40px/1 var(--display); margin-bottom: 14px; }
+      .calendar p { color: #d5d7d0; font-size: 18px; }
+      .calendar .button { margin-top: 12px; }
+      .calendar-status { min-height: 22px; margin: 13px 0 0; color: #e4c79f; font: 500 11px/1.4 var(--sans); letter-spacing: .3px; }
+
+      footer { padding: 42px 0 45px; background: #202e2c; color: #e3e2dc; }
+      .footer-grid { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+      footer h2 { font: 500 44px/.9 var(--display); text-transform: uppercase; margin: 0; }
+      footer h2 em { display: block; padding-left: 47px; font-family: var(--serif); font-size: .67em; font-style: italic; text-transform: none; }
+      .footer-note { max-width: 430px; font-size: 11px; line-height: 1.5; letter-spacing: .3px; color: #bcc1ba; text-align: right; }
+
+      @media (max-width: 800px) {
+        .wrap { width: min(100% - 34px, 1180px); }
+        .topnav { display: none; }
+        .hero { min-height: 690px; }
+        .hero-content { padding-bottom: 59px; }
+        h1 { font-size: clamp(53px, 17vw, 88px); }
+        .hero-stamp { width: 93px; height: 93px; bottom: 25px; font-size: 8px; right: 19px; }
+        .hero-stamp strong { font-size: 23px; }
+        .intro, .agenda, .editors, .places, .essentials { padding: 62px 0; }
+        .intro-grid, .split-header, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
+        .quick-facts { grid-column: auto; }
+        .section-head { display: block; }
+        .section-intro { margin: 15px 0 0; }
+        .day-tabs { display: flex; overflow-x: auto; }
+        .day-tab { min-width: 108px; flex: 1; }
+        .day-panel { grid-template-columns: 1fr; gap: 22px; }
+        .day-number { font-size: 51px; }
+        .day-number span { display: inline; margin-left: 10px; vertical-align: middle; }
+        .event-card { min-height: 0; }
+        .ideas-grid, .places-grid { grid-template-columns: 1fr; }
+        .split-header p:last-child { margin-top: 0; }
+        .footer-grid { display: block; }
+        .footer-note { text-align: left; margin-top: 25px; }
+      }
+      @media (max-width: 470px) {
+        .quick-facts { grid-template-columns: 1fr; }
+        .fact, .fact + .fact { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
+        .fact:last-child { border-bottom: 0; }
+        .hero-buttons .button { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap">
+        <a class="monogram" href="#inicio">Virginia &amp; Jose</a>
+        <nav class="topnav" aria-label="Navegación principal">
+          <a href="#agenda">Semana</a>
+          <a href="#planes">Planes</a>
+          <a href="#mesas">Mesas</a>
+          <a href="#practico">Práctico</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-media" src="assets/costa-smeralda-hero.png" alt="Cala de granito y agua turquesa en el norte de Cerdeña" />
+        <div class="wrap hero-content">
+          <p class="eyebrow">Guía de invitados · 2–7 septiembre 2026</p>
+          <h1 id="hero-title">Wedding<br />Sardinia <span>un poco más de Cerdeña</span></h1>
+          <p class="hero-copy">Una semana para llegar, bañarse, brindar y descubrir la Gallura a vuestro ritmo.</p>
+          <div class="hero-buttons">
+            <a class="button" href="#agenda"><i data-lucide="calendar-days" aria-hidden="true"></i> Ver la semana</a>
+            <a class="button ghost" href="#mesas"><i data-lucide="utensils" aria-hidden="true"></i> Dónde comer</a>
+          </div>
+        </div>
+        <div class="hero-stamp" aria-hidden="true">Costa Smeralda <strong>2026</strong> Sardegna</div>
+      </section>
+
+      <section class="intro wrap" aria-labelledby="bienvenida-title">
+        <div class="intro-grid">
+          <div>
+            <p class="section-label">La semana de la boda</p>
+            <h2 class="lead-title" id="bienvenida-title">Entre el mar<br />y el granito</h2>
+          </div>
+          <div class="intro-copy">
+            <p>Los eventos nos llevan de <em>Baja Sardinia y Porto Cervo</em> a Costa Corallina. Entre medias hay calas, pueblos de artistas y mesas largas de cocina galluresa.</p>
+            <p>Esta guía os propone planes fáciles de encajar, siempre dejando tiempo para llegar descansados y puntuales.</p>
+          </div>
+          <div class="quick-facts" aria-label="Información de la semana">
+            <div class="fact"><b>2–7</b><span>Septiembre<br />de 2026</span></div>
+            <div class="fact"><b>3</b><span>Zonas clave<br />Olbia · Costa Smeralda · Gallura</span></div>
+            <div class="fact"><b>Coche</b><span>La forma más cómoda<br />de moveros</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="agenda" id="agenda" aria-labelledby="agenda-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Del miércoles al lunes</p>
+              <h2 class="section-title" id="agenda-title">Una semana<br />bien medida</h2>
+            </div>
+            <p class="section-intro">Pulsa un día para ver una propuesta ligera. Los momentos de boda están señalados para organizar el resto sin prisas.</p>
+          </div>
+
+          <div class="day-tabs" role="tablist" aria-label="Itinerario por día">
+            <button class="day-tab active" role="tab" aria-selected="true" aria-controls="day-2" id="tab-2" data-day="2"><span class="day-date">02 sept.</span><span class="day-name">Mié.</span></button>
+            <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-3" id="tab-3" data-day="3"><span class="day-date">03 sept.</span><span class="day-name">Jue.</span></button>
+            <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-4" id="tab-4" data-day="4"><span class="day-date">04 sept.</span><span class="day-name">Vie.</span></button>
+            <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-5" id="tab-5" data-day="5"><span class="day-date">05 sept.</span><span class="day-name">Sáb.</span></button>
+            <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-6" id="tab-6" data-day="6"><span class="day-date">06 sept.</span><span class="day-name">Dom.</span></button>
+            <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-7" id="tab-7" data-day="7"><span class="day-date">07 sept.</span><span class="day-name">Lun.</span></button>
+          </div>
+
+          <article class="day-panel active" id="day-2" role="tabpanel" aria-labelledby="tab-2">
+            <div class="day-number">02<span>Llegadas · Olbia</span></div>
+            <div>
+              <h3>Aterrizar y bajar el ritmo</h3>
+              <p class="summary">Un primer día para instalarse, recoger el coche y saludar al mar sin cruzar media isla.</p>
+              <ul class="plan-list">
+                <li><time>MEDIODÍA</time><div><strong>Paseo y comida por el centro de Olbia</strong><p>Corso Umberto y el puerto son una primera toma de contacto muy fácil después del vuelo.</p></div></li>
+                <li><time>TARDE</time><div><strong>Baño en Porto Istana o Costa Corallina</strong><p>Calas cercanas al alojamiento y a la celebración del sábado.</p></div></li>
+                <li><time>NOCHE</time><div><strong>Cena tranquila en Olbia</strong><p>Reservad temprano y guardad energía para los días de fiesta.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>Llegadas</h4><p>Olbia es la base más cómoda si llegáis en avión. Aprovechad para aprovisionaros de agua, crema solar y algo de efectivo.</p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Olbia%20Centro"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir Olbia en Maps</a></aside>
+          </article>
+
+          <article class="day-panel" id="day-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+            <div class="day-number">03<span>San Pantaleo · Baja Sardinia</span></div>
+            <div>
+              <h3>Artesanía, playa y blanco</h3>
+              <p class="summary">El jueves tiene un protagonista perfecto: el mercadillo de San Pantaleo por la mañana, y la White Party al caer la noche.</p>
+              <ul class="plan-list">
+                <li><time>08:30</time><div><strong>Mercadillo de San Pantaleo</strong><p>Artesanía, cerámica, textiles y productos locales en las calles del pueblo. Mejor llegar pronto.</p></div></li>
+                <li><time>13:30</time><div><strong>Comida lenta y cala cercana</strong><p>San Pantaleo, Liscia Ruja o Cala Granu son buenas combinaciones sin alejarse de la Costa Smeralda.</p></div></li>
+                <li><time>18:45</time><div><strong>Vuelta al alojamiento</strong><p>Tiempo para preparar el look blanco y salir con margen hacia Baja Sardinia.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>White Party</h4><p class="event-time">20:30 · Lunaria Beach, Baja Sardinia</p><p>Una noche junto al mar. Calculad aparcamiento y el trayecto antes de salir.</p><a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/uHo1KdArdeNXLE946"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir ubicación</a></aside>
+          </article>
+
+          <article class="day-panel" id="day-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+            <div class="day-number">04<span>Porto Cervo</span></div>
+            <div>
+              <h3>La Costa Smeralda, con calma</h3>
+              <p class="summary">Un día de playa breve o paseo por Porto Cervo antes de encontrarnos para tomar algo.</p>
+              <ul class="plan-list">
+                <li><time>MAÑANA</time><div><strong>Playa de Capriccioli o del Príncipe</strong><p>Elegid una sola cala, llevad agua y no estiréis demasiado la sobremesa.</p></div></li>
+                <li><time>15:30</time><div><strong>Paseo por la marina de Porto Cervo</strong><p>Helado, cafés y tiendas alrededor del puerto; una buena transición antes del evento.</p></div></li>
+                <li><time>16:30</time><div><strong>Camino al encuentro</strong><p>Dejad margen para aparcar y para cambiaros con tranquilidad.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>Encuentro de bienvenida</h4><p class="event-time">17:00 · Lord Nelson Pub, Porto Cervo</p><p>Un brindis relajado para vernos antes del gran día.</p><a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/BMWY6eCE1W1VgFBP9"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir ubicación</a></aside>
+          </article>
+
+          <article class="day-panel" id="day-5" role="tabpanel" aria-labelledby="tab-5" hidden>
+            <div class="day-number">05<span>Porto Cervo · Costa Corallina</span></div>
+            <div>
+              <h3>Hoy es el día</h3>
+              <p class="summary">La mejor actividad es un desayuno bonito, una mañana sin planes complicados y salir con tiempo suficiente.</p>
+              <ul class="plan-list">
+                <li><time>MAÑANA</time><div><strong>Desayuno y preparativos</strong><p>Dejad lista la ruta Porto Cervo → Costa Corallina y cualquier cosa que necesitéis para el cambio de ubicación.</p></div></li>
+                <li><time>12:00</time><div><strong>Ceremonia religiosa</strong><p>En la iglesia Stella Maris, Porto Cervo.</p></div></li>
+                <li><time>14:45</time><div><strong>Celebración</strong><p>En Hotel Ollastu Resort, Costa Corallina. Todo el mundo a celebrar.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>Ceremonia &amp; celebración</h4><p class="event-time">12:00 · Stella Maris<br />14:45 · Hotel Ollastu</p><p>Hay cambio de zona entre ambos momentos. Conducid con margen y consultad los detalles del transporte con la organización.</p><a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/vcZyPBfmUa5fhYLLA"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir ceremonia</a></aside>
+          </article>
+
+          <article class="day-panel" id="day-6" role="tabpanel" aria-labelledby="tab-6" hidden>
+            <div class="day-number">06<span>Porto San Paolo · Tavolara</span></div>
+            <div>
+              <h3>Domingo de mar abierto</h3>
+              <p class="summary">Para quien aún tenga ganas de azul: una excursión en barco desde Porto San Paolo hacia Tavolara y Molara.</p>
+              <ul class="plan-list">
+                <li><time>10:00</time><div><strong>Salida en barco desde Porto San Paolo</strong><p>Reservad con un operador local y confirmad el estado del mar la víspera.</p></div></li>
+                <li><time>MEDIODÍA</time><div><strong>Baño y snorkel frente a Tavolara</strong><p>Una de las zonas más bonitas y cercanas a Costa Corallina.</p></div></li>
+                <li><time>TARDE</time><div><strong>Aperitivo suave en Olbia</strong><p>La vuelta perfecta para despedir el fin de semana.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Plan recomendado</p><h4>Tavolara</h4><p>Ideal para alargar la experiencia sin hacer demasiados kilómetros. Reservad embarcación con antelación en temporada.</p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Porto%20San%20Paolo%20Sardegna"><i data-lucide="ship-wheel" aria-hidden="true"></i> Abrir puerto</a></aside>
+          </article>
+
+          <article class="day-panel" id="day-7" role="tabpanel" aria-labelledby="tab-7" hidden>
+            <div class="day-number">07<span>Gallura interior</span></div>
+            <div>
+              <h3>Una última mesa sarda</h3>
+              <p class="summary">Antes de volver, cambiad un rato de costa por encinas, granito y una comida larga de producto local.</p>
+              <ul class="plan-list">
+                <li><time>MAÑANA</time><div><strong>Arzachena y paisaje de Gallura</strong><p>Carreteras tranquilas, pequeños stazzi y formaciones de granito entre encinas.</p></div></li>
+                <li><time>13:30</time><div><strong>Almuerzo en agriturismo</strong><p>Tenuta Pilastru es una gran opción para despedirse con cocina galluresa.</p></div></li>
+                <li><time>TARDE</time><div><strong>Vuelta con margen</strong><p>Dejad tiempo para maletas, aeropuerto o una última parada en Olbia.</p></div></li>
+              </ul>
+            </div>
+            <aside class="event-card"><p class="small-label">Plan recomendado</p><h4>Gallura auténtica</h4><p>La sobremesa aquí no se mide con reloj: reservad y avisad de alergias o necesidades alimentarias al hacer la reserva.</p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tenuta%20Pilastru%20Arzachena"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir Tenuta Pilastru</a></aside>
+          </article>
+        </div>
+      </section>
+
+      <section class="editors wrap" id="planes" aria-labelledby="planes-title">
+        <div class="split-header">
+          <div><p class="section-label">Para guardar en favoritos</p><h2 class="section-title" id="planes-title">Tres maneras de vivirlo</h2></div>
+          <p>Un día de playa, un pueblo de granito o una escapada en barco. Son planes sencillos, cerca de las zonas de los eventos y fáciles de combinar con una buena comida.</p>
+        </div>
+        <div class="ideas-grid">
+          <article class="idea"><div class="idea-icon"><i data-lucide="waves" aria-hidden="true"></i></div><h3>Una cala, sin prisa</h3><p>Capriccioli, Cala Granu, Liscia Ruja, Porto Istana y Costa Corallina son las apuestas cercanas. Elegid una y disfrutadla bien.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Capriccioli%20Spiaggia">Ver playas en Maps</a></article>
+          <article class="idea"><div class="idea-icon"><i data-lucide="mountain" aria-hidden="true"></i></div><h3>Granito y artesanía</h3><p>San Pantaleo reúne talleres, callejuelas, una plaza muy agradable y el mercado de los jueves. Es una parada con personalidad.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=San%20Pantaleo%20Sardegna">Abrir San Pantaleo</a></article>
+          <article class="idea"><div class="idea-icon"><i data-lucide="sailboat" aria-hidden="true"></i></div><h3>El azul de Tavolara</h3><p>Desde Porto San Paolo salen excursiones a Tavolara y Molara. Ideal para nadar, hacer snorkel y ver la costa desde otro ángulo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tavolara%20Sardegna">Ver Tavolara en Maps</a></article>
+        </div>
+      </section>
+
+      <section class="places" id="mesas" aria-labelledby="mesas-title">
+        <div class="wrap">
+          <p class="section-label">Mesas que merecen el desvío</p>
+          <h2 class="section-title" id="mesas-title">Comer como<br />en Cerdeña</h2>
+          <div class="place-tabs" aria-label="Filtrar lugares">
+            <button class="place-filter active" data-filter="all">Todo</button>
+            <button class="place-filter" data-filter="gallura">Gallura</button>
+            <button class="place-filter" data-filter="olbia">Olbia y sur</button>
+            <button class="place-filter" data-filter="costa">Costa Smeralda</button>
+          </div>
+          <div class="places-grid">
+            <article class="place" data-area="gallura"><div class="place-top"><div><h3>Tenuta Pilastru</h3><p>Arzachena · Gallura</p></div><span class="tag">Agriturismo</span></div><p>Una cena o comida de cocina galluresa entre granito y campo. Especialmente buena para el lunes, después de los eventos.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.tenutapilastru.it/">Visitar web</a></article>
+            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Sa Crescia Ezza</h3><p>Olbia · Berchiddeddu</p></div><span class="tag">Agriturismo</span></div><p>Producto de la finca y sabores tradicionales cerca de Olbia. Una opción muy cómoda si os alojáis o voláis desde allí.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.sacresciaezza.com/">Visitar web</a></article>
+            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Da Roberta</h3><p>Padru · Interior</p></div><span class="tag">Cocina local</span></div><p>Parada informal hacia el interior de Gallura para probar cocina casera y prolongar el plan de carretera sin ceremonias.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Da%20Roberta%20Padru%20Sardegna">Abrir en Maps</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>San Pantaleo</h3><p>San Pantaleo</p></div><span class="tag">Pueblo</span></div><p>Para tomar algo después de pasear por el pueblo o hacer una comida que no os obligue a alejaros de Porto Cervo.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ristoranti%20San%20Pantaleo%20Sardegna">Ver restaurantes</a></article>
+            <article class="place" data-area="olbia"><div class="place-top"><div><h3>Centro de Olbia</h3><p>Olbia</p></div><span class="tag">Aperitivo</span></div><p>Una apuesta fácil para la noche de llegada o el domingo: terraza, paseo por el centro y mesa sin tener que conducir demasiado.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ristoranti%20Centro%20Olbia">Ver en Maps</a></article>
+            <article class="place" data-area="costa"><div class="place-top"><div><h3>Porto Cervo</h3><p>Marina y piazzetta</p></div><span class="tag">Con vistas</span></div><p>Para un aperitivo con la luz de última hora antes del encuentro del viernes. Mejor reservar o llegar con margen.</p><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Porto%20Cervo%20Marina">Abrir en Maps</a></article>
+          </div>
+          <p class="place-note">En septiembre las mesas buenas siguen llenándose: reservad con antelación y confirmad horarios, días de apertura y opciones para alergias directamente con cada sitio.</p>
+        </div>
+      </section>
+
+      <section class="essentials" id="practico" aria-labelledby="practico-title">
+        <div class="wrap essentials-grid">
+          <div>
+            <p class="section-label">Para que todo fluya</p>
+            <h2 id="practico-title">Lo práctico</h2>
+            <p>Olbia es el punto de entrada más cómodo. Un coche os dará la libertad que pide esta parte de la isla y os evitará depender de taxis en días de eventos.</p>
+            <ul class="check-list">
+              <li><i data-lucide="car-front" aria-hidden="true"></i><span>Reservad coche con tiempo; las distancias parecen cortas, pero las carreteras invitan a ir despacio.</span></li>
+              <li><i data-lucide="sun" aria-hidden="true"></i><span>Llevad crema solar, sombrero, escarpines ligeros y una capa para las noches junto al mar.</span></li>
+              <li><i data-lucide="clock-3" aria-hidden="true"></i><span>En los días 3, 4 y 5 salid siempre con margen: agosto termina, pero el tráfico de costa sigue existiendo.</span></li>
+              <li><i data-lucide="calendar-check-2" aria-hidden="true"></i><span>Para barco, agriturismo y restaurantes, mejor reserva previa y confirmación el día anterior.</span></li>
+            </ul>
+          </div>
+          <aside class="calendar" aria-labelledby="calendar-title">
+            <p class="section-label">Un solo clic</p>
+            <h3 id="calendar-title">Añade los eventos al calendario</h3>
+            <p>Descarga un calendario con los tres momentos principales de la boda y sus enlaces de ubicación.</p>
+            <button class="button" id="calendar-download"><i data-lucide="download" aria-hidden="true"></i> Descargar .ics</button>
+            <p class="calendar-status" id="calendar-status" aria-live="polite"></p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-grid">
+        <h2>Wedding Sardinia <em>gracias por venir</em></h2>
+        <p class="footer-note">Esta es una guía de inspiración para la semana de la boda. Comprobad siempre las reservas, horarios y condiciones directamente con cada proveedor antes de hacer planes.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+
+      const dayTabs = document.querySelectorAll('.day-tab');
+      const dayPanels = document.querySelectorAll('.day-panel');
+      dayTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const day = tab.dataset.day;
+          dayTabs.forEach((item) => {
+            const selected = item === tab;
+            item.classList.toggle('active', selected);
+            item.setAttribute('aria-selected', selected);
+          });
+          dayPanels.forEach((panel) => {
+            const selected = panel.id === `day-${day}`;
+            panel.classList.toggle('active', selected);
+            panel.hidden = !selected;
+          });
+          lucide.createIcons();
+        });
+      });
+
+      const filters = document.querySelectorAll('.place-filter');
+      const places = document.querySelectorAll('.place');
+      filters.forEach((filter) => {
+        filter.addEventListener('click', () => {
+          const category = filter.dataset.filter;
+          filters.forEach((item) => item.classList.toggle('active', item === filter));
+          places.forEach((place) => {
+            place.hidden = category !== 'all' && place.dataset.area !== category;
+          });
+        });
+      });
+
+      document.getElementById('calendar-download').addEventListener('click', () => {
+        const events = [
+          ['White Party', '20260903T203000', '20260903T233000', 'Lunaria Beach, Baja Sardinia', 'https://maps.app.goo.gl/uHo1KdArdeNXLE946'],
+          ['Encuentro de bienvenida', '20260904T170000', '20260904T190000', 'Lord Nelson Pub, Porto Cervo', 'https://maps.app.goo.gl/BMWY6eCE1W1VgFBP9'],
+          ['Ceremonia religiosa', '20260905T120000', '20260905T133000', 'Iglesia Stella Maris, Porto Cervo', 'https://maps.app.goo.gl/vcZyPBfmUa5fhYLLA'],
+          ['Celebración de boda', '20260905T144500', '20260905T235900', 'Hotel Ollastu Resort, Costa Corallina', 'https://maps.app.goo.gl/hhwJfTZmGFvSNdkAA']
+        ];
+        const calendar = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Wedding Sardinia 2026//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+        events.forEach(([title, start, end, location, url], index) => {
+          calendar.push('BEGIN:VEVENT', `UID:wedding-sardinia-${index + 1}@virginia-jose`, `DTSTAMP:20260101T120000Z`, `DTSTART:${start}`, `DTEND:${end}`, `SUMMARY:${title}`, `LOCATION:${location}`, `URL:${url}`, 'END:VEVENT');
+        });
+        calendar.push('END:VCALENDAR');
+        const blob = new Blob([calendar.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'wedding-sardinia-2026.ics';
+        link.click();
+        URL.revokeObjectURL(link.href);
+        document.getElementById('calendar-status').textContent = 'Calendario descargado. Ábrelo para añadir los eventos.';
+      });
+    </script>
+  </body>
+</html>
