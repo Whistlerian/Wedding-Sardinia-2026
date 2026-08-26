@@ -9,6 +9,7 @@
       content="Guía de planes, mesas y escapadas para la semana de boda en Cerdeña, del 2 al 7 de septiembre de 2026."
     />
     <title>Wedding Sardinia 2026 | Guía de invitados</title>
+    <link rel="icon" type="image/png" href="assets/virginia-jose-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -115,6 +116,31 @@
       .map-link { display: inline-flex; align-items: center; gap: 7px; color: #f0d7b4; font-size: 10px; font-weight: 600; letter-spacing: 1.1px; text-decoration: none; text-transform: uppercase; }
       .map-link:hover { color: #fff; }
 
+      .transport { background: var(--deep); color: #fff; padding: 88px 0 94px; }
+      .transport .section-label { color: #e4c79f; }
+      .transport .section-title { color: #fff; }
+      .transport .section-intro { color: #d5d7d0; }
+      .transport-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px; margin-top: 40px; }
+      .journey { border-top: 1px solid rgba(228, 199, 159, .68); padding-top: 17px; }
+      .journey-heading { align-items: baseline; display: flex; justify-content: space-between; gap: 16px; margin-bottom: 7px; }
+      .journey-heading h3 { color: #fff; font: 500 42px/.92 var(--display); margin: 0; text-transform: uppercase; }
+      .journey-heading span { color: #e4c79f; font: 600 10px/1.3 var(--sans); letter-spacing: 1.25px; text-align: right; text-transform: uppercase; }
+      .journey > p { color: #d5d7d0; font-size: 18px; line-height: 1.35; margin: 0 0 18px; }
+      .route-list { list-style: none; margin: 0; padding: 0; }
+      .route-list li { border-top: 1px solid rgba(255,255,255,.17); display: grid; gap: 15px; grid-template-columns: 76px minmax(0, 1fr); padding: 14px 0; }
+      .route-list time { color: #e4c79f; font: 600 11px/1.35 var(--sans); letter-spacing: 1px; }
+      .route-list strong { color: #fff; display: block; font: 500 24px/1 var(--display); margin-bottom: 3px; }
+      .route-list p { color: #d5d7d0; font-size: 16px; line-height: 1.32; margin: 0; }
+      .route-list a { color: #f0d7b4; font: 600 9px/1.5 var(--sans); letter-spacing: 1px; text-decoration: none; text-transform: uppercase; }
+      .route-list a:hover { color: #fff; }
+      .transport-alert { border: 1px solid rgba(228, 199, 159, .52); display: flex; gap: 13px; margin-top: 38px; padding: 17px 19px; }
+      .transport-alert svg { color: #e4c79f; flex: 0 0 auto; height: 20px; margin-top: 2px; width: 20px; }
+      .transport-alert p { color: #e9e6dc; font-size: 17px; line-height: 1.35; margin: 0; }
+      .transport-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 38px; }
+      .transport-note { border-top: 1px solid rgba(255,255,255,.28); padding-top: 17px; }
+      .transport-note h3 { color: #fff; font: 500 31px/1 var(--display); margin-bottom: 9px; }
+      .transport-note p { color: #d5d7d0; font-size: 17px; line-height: 1.36; margin: 0; }
+
       .editors { padding: 91px 0 96px; }
       .split-header { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; margin-bottom: 39px; }
       .split-header .section-title { max-width: 420px; }
@@ -190,8 +216,8 @@
         .hero { min-height: 640px; }
         .hero-content { padding: 100px 0 38px; }
         h1 { font-size: clamp(49px, 15vw, 80px); }
-        .intro, .agenda, .editors, .bases, .places, .essentials { padding: 62px 0; }
-        .intro-grid, .split-header, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
+        .intro, .agenda, .transport, .editors, .bases, .places, .essentials { padding: 62px 0; }
+        .intro-grid, .split-header, .transport-grid, .transport-notes, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
         .quick-facts { grid-column: auto; }
         .section-head { display: block; }
         .section-intro { margin: 15px 0 0; }
@@ -236,8 +262,10 @@
           <p class="hero-names">Boda Virginia &amp; José <span>05 · 09 · 2026</span></p>
           <p class="hero-copy">Sugerencias personales para la semana de nuestra boda.</p>
           <div class="hero-buttons">
-            <a class="button" href="#agenda"><i data-lucide="calendar-days" aria-hidden="true"></i> Ver la semana</a>
+            <a class="button" href="#agenda"><i data-lucide="calendar-days" aria-hidden="true"></i> Planning</a>
             <a class="button ghost" href="#mesas"><i data-lucide="utensils" aria-hidden="true"></i> Dónde comer</a>
+            <a class="button ghost" href="#autobus"><i data-lucide="bus-front" aria-hidden="true"></i> Autobús boda</a>
+            <a class="button ghost" target="_blank" rel="noopener" href="https://virginiayjose.com/#travel"><i data-lucide="landmark" aria-hidden="true"></i> IBAN</a>
           </div>
         </div>
       </section>
@@ -437,7 +465,7 @@
                 <li><time>14:45</time><div><strong>Celebración</strong><p>En Hotel Ollastu Resort, Costa Corallina. Todo el mundo a celebrar.</p></div></li>
               </ul>
             </div>
-            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>Ceremonia &amp; celebración</h4><p class="event-time">12:00 · Stella Maris<br />14:45 · Hotel Ollastu</p><p>Hay cambio de zona entre ambos momentos. Conducid con margen y consultad los detalles del transporte con la organización.</p><a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/vcZyPBfmUa5fhYLLA"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir ceremonia</a></aside>
+            <aside class="event-card"><p class="small-label">Momento de boda</p><h4>Ceremonia &amp; celebración</h4><p class="event-time">12:00 · Stella Maris<br />14:45 · Hotel Ollastu</p><p>Hay cambio de zona entre ambos momentos. Conducid con margen y consultad los detalles del transporte con la organización.</p><p><strong>Código de vestimenta:</strong> formal.</p><a class="map-link" target="_blank" rel="noopener" href="https://maps.app.goo.gl/vcZyPBfmUa5fhYLLA"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir ceremonia</a></aside>
           </article>
 
           <article class="day-panel" id="day-6" role="tabpanel" aria-labelledby="tab-6" hidden>
@@ -467,6 +495,48 @@
             </div>
             <aside class="event-card"><p class="small-label">Plan recomendado</p><h4>Gallura auténtica</h4><p>La sobremesa aquí no se mide con reloj: reservad y avisad de alergias o necesidades alimentarias al hacer la reserva.</p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tenuta%20Pilastru%20Arzachena"><i data-lucide="map-pin" aria-hidden="true"></i> Abrir Tenuta Pilastru</a></aside>
           </article>
+        </div>
+      </section>
+
+      <section class="transport" id="autobus" aria-labelledby="autobus-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Sábado 5 de septiembre</p>
+              <h2 class="section-title" id="autobus-title">Autobús<br />de boda</h2>
+            </div>
+            <p class="section-intro">La ida y la vuelta tienen rutas distintas. Elegid vuestra parada con tiempo y no contéis con taxis improvisados de madrugada.</p>
+          </div>
+
+          <div class="transport-grid">
+            <article class="journey">
+              <div class="journey-heading"><h3>Ida</h3><span>Mañana · hacia Porto Cervo</span></div>
+              <p>La ruta se ha calculado con margen para tráfico, ferris y la carretera de costa. El autobús sale a la hora indicada.</p>
+              <ol class="route-list">
+                <li><time>10:00</time><div><strong>Olbia · Molo Brin</strong><p>Salida desde Olbia.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/QBdhXYzgDYMgoURQ6">Abrir parada en Maps</a></div></li>
+                <li><time>10:50</time><div><strong>San Pantaleo · Fermata autobus</strong><p>Segunda parada de recogida.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/R7bMFMSUVDb6pBP69">Abrir parada en Maps</a></div></li>
+                <li><time>11:40</time><div><strong>Iglesia Stella Maris</strong><p>Llegada a la iglesia antes de la ceremonia de las 12:00.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/vcZyPBfmUa5fhYLLA">Abrir iglesia en Maps</a></div></li>
+              </ol>
+            </article>
+
+            <article class="journey">
+              <div class="journey-heading"><h3>Vuelta</h3><span>Madrugada · ruta diferente</span></div>
+              <p>Hay una única salida nocturna. El orden de regreso es <strong>Olbia, Pittulongu y San Pantaleo</strong>; no es la ruta inversa de la mañana.</p>
+              <ol class="route-list">
+                <li><time>02:30</time><div><strong>Hotel Ollastu Resort</strong><p>Salida única desde la fiesta.</p></div></li>
+                <li><time>Después</time><div><strong>Olbia · Molo Brin</strong><p>Primera parada de regreso.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/QBdhXYzgDYMgoURQ6">Abrir parada en Maps</a></div></li>
+                <li><time>Después</time><div><strong>Pittulongu</strong><p>Segunda parada de regreso.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/cNrTVff1sjF6YDDJ9">Abrir parada en Maps</a></div></li>
+                <li><time>Final</time><div><strong>San Pantaleo · Fermata autobus</strong><p>Última parada del recorrido.</p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/R7bMFMSUVDb6pBP69">Abrir parada en Maps</a></div></li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="transport-alert"><i data-lucide="clock-3" aria-hidden="true"></i><p><strong>Puntualidad máxima:</strong> el autobús no puede esperar. Si llegáis tarde, seguirá la ruta para no comprometer la llegada de todos a la ceremonia.</p></aside>
+
+          <div class="transport-notes">
+            <article class="transport-note"><h3>Taxis y transfers</h3><p>De noche son muy escasos en esta zona y no se pueden improvisar. Reservad con días de antelación cualquier traslado alternativo que vayáis a necesitar.</p></article>
+            <article class="transport-note"><h3>¿Dormís en Porto San Paolo?</h3><p>Recomendamos ir con vuestro coche durante el día. Podéis dejarlo en Hotel Ollastu y recogerlo al día siguiente. Si preferís transfer a Porto San Paolo a las 02:30, avisadnos cuanto antes para organizarlo.</p></article>
+          </div>
         </div>
       </section>
 
@@ -528,7 +598,7 @@
           <aside class="calendar" aria-labelledby="calendar-title">
             <p class="section-label">Un solo clic</p>
             <h3 id="calendar-title">Añade los eventos al calendario</h3>
-            <p>Descarga un calendario con los tres momentos principales de la boda y sus enlaces de ubicación.</p>
+            <p>Descarga el calendario con los principales momentos de la boda y sus enlaces de ubicación.</p>
             <button class="button" id="calendar-download"><i data-lucide="download" aria-hidden="true"></i> Descargar .ics</button>
             <p class="calendar-status" id="calendar-status" aria-live="polite"></p>
           </aside>

@@ -12,6 +12,7 @@ Invitados de la boda de Virginia y José en Cerdeña, del 2 al 7 de septiembre d
 ## Alcance y supuestos
 - Se cubren Olbia, Porto San Paolo, Pittulongu, San Pantaleo, Arzachena y Monticanaglia.
 - Las recomendaciones se han limitado a actividades, mesas y proveedores con página propia, portal turístico oficial o guía local actualizada.
+- Los horarios de boda, código de vestimenta y la operación del autobús proceden directamente de la organización de Virginia y José.
 - Se presupone que los invitados confirmarán disponibilidad, horarios, mar y condiciones de acceso directamente con cada proveedor.
 
 ## Respuesta ejecutiva
@@ -43,6 +44,7 @@ La documentación municipal de movilidad de Arzachena sitúa Monticanaglia dentr
 - La meteorología y el estado del mar pueden cambiar los planes de Tavolara, Molara y las playas expuestas al viento.
 
 ## Registro de fuentes
+- Organización de Virginia y José, mensaje de difusión del 27 de agosto de 2026 - calendario de boda, código de vestimenta, paradas del autobús y recomendaciones de transporte nocturno.
 - [Hello Olbia: experiencias de ciudad](https://www.helloolbia.com/esperienze/) - centro, Corso Umberto y Museo Arqueológico.
 - [Hello Olbia: Spiaggia di Pittulongu](https://www.helloolbia.com/spiaggia-di-pittulongu/) - servicios y acceso local.
 - [SardegnaTurismo: La Playa di Pittulongu](https://www.sardegnaturismo.it/it/node/15080?language=it) - ficha turística regional de la playa.
