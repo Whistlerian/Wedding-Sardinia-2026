@@ -54,7 +54,7 @@
         color: #fff;
       }
       .topbar .wrap { display: flex; justify-content: flex-start; align-items: center; }
-      .brand-lockup, .eyebrow, .button, .day-date, .kicker, .event-time, .small-label, .tag, .map-link, .footer-note { font-family: var(--sans); }
+      .brand-lockup, .eyebrow, .button, .day-date, .kicker, .event-time, .small-label, .tag, .map-link, .footer-kicker, .footer-note, .footer-small { font-family: var(--sans); }
       .brand-lockup { display: block; width: 185px; }
       .brand-logo { display: block; width: 100%; height: auto; }
 
@@ -213,11 +213,14 @@
       .bank-label { color: var(--gold); font: 600 13px/1.3 var(--sans); letter-spacing: 2px; text-transform: uppercase; }
       .bank-value { color: var(--deep); font: 500 21px/1.3 var(--serif); overflow-wrap: anywhere; }
 
-      footer { padding: 42px 0 45px; background: #202e2c; color: #e3e2dc; }
-      .footer-grid { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
-      footer h2 { font: 500 44px/.9 var(--display); text-transform: uppercase; margin: 0; }
-      footer h2 em { display: block; padding-left: 47px; font-family: var(--serif); font-size: .67em; font-style: italic; text-transform: none; }
-      .footer-note { max-width: 430px; font-size: 11px; line-height: 1.5; letter-spacing: .3px; color: #bcc1ba; text-align: right; }
+      footer { padding: 70px 0 74px; background: #202e2c; color: #e3e2dc; text-align: center; }
+      .footer-grid { display: grid; justify-items: center; gap: 14px; max-width: 820px; }
+      .footer-logo { display: block; width: 168px; height: auto; margin-bottom: 13px; }
+      .footer-kicker { margin: 0; color: #e4c79f; font-size: 11px; font-weight: 600; letter-spacing: 2.6px; text-transform: uppercase; }
+      footer h2 { color: #fff; font: 500 clamp(42px, 6vw, 72px)/.9 var(--display); letter-spacing: 1px; margin: 0; text-transform: uppercase; }
+      footer h2 em { display: block; color: #f3dcc0; font-family: var(--serif); font-size: .45em; font-style: italic; letter-spacing: 0; margin-top: 8px; text-transform: none; }
+      .footer-note { max-width: 670px; margin: 13px auto 0; color: #d9ded5; font-size: 16px; line-height: 1.55; letter-spacing: .1px; }
+      .footer-small { max-width: 620px; margin: 4px auto 0; color: #aeb7ae; font-size: 11px; line-height: 1.5; letter-spacing: .4px; }
 
       @media (max-width: 800px) {
         .wrap { width: min(100% - 34px, 1180px); }
@@ -243,8 +246,10 @@
         .base-recommendation { min-height: 0; }
         .gift-card { padding: 34px 28px; }
         .split-header p:last-child { margin-top: 0; }
-        .footer-grid { display: block; }
-        .footer-note { text-align: left; margin-top: 25px; }
+        footer { padding: 55px 0 58px; }
+        .footer-grid { display: grid; }
+        .footer-logo { width: 145px; }
+        .footer-note { font-size: 15px; }
       }
       @media (max-width: 470px) {
         .quick-facts { grid-template-columns: 1fr; }
@@ -639,10 +644,13 @@
       </section>
     </main>
 
-    <footer>
+    <footer aria-labelledby="footer-title">
       <div class="wrap footer-grid">
-        <h2>Wedding Sardinia <em>gracias por venir</em></h2>
-        <p class="footer-note">Esta es una guía de inspiración para la semana de la boda. Comprobad siempre las reservas, horarios y condiciones directamente con cada proveedor antes de hacer planes.</p>
+        <img class="footer-logo" src="assets/virginia-jose-logo.png" alt="Virginia y José" />
+        <p class="footer-kicker">Boda Virginia &amp; José</p>
+        <h2 id="footer-title">05 · 09 · 2026 <em>gracias por venir hasta Cerdeña</em></h2>
+        <p class="footer-note">Nos hace muchísima ilusión compartir estos días con vosotros. Ojalá esta guía os ayude a llegar con calma, descubrir rincones bonitos y guardar un poco de Cerdeña en la memoria.</p>
+        <p class="footer-small">Para horarios oficiales, cambios de última hora y datos de la boda, consultad siempre virginiayjose.com.</p>
       </div>
     </footer>
 
