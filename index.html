@@ -204,6 +204,15 @@
       .calendar .button { margin-top: 12px; }
       .calendar-status { min-height: 22px; margin: 13px 0 0; color: #e4c79f; font: 500 11px/1.4 var(--sans); letter-spacing: .3px; }
 
+      .gift-section { background: #ebe6de; padding: 88px 0 92px; }
+      .gift-card { background: var(--white); border: 1px solid #e8dfd3; box-shadow: 0 2px 4px rgba(0, 0, 0, .05); margin: 0 auto; max-width: 860px; padding: 42px 48px; text-align: center; }
+      .gift-title { color: #5a5a5a; font: 400 38px/1 var(--display); letter-spacing: 4px; margin: 0 0 18px; text-transform: uppercase; }
+      .gift-message { color: #6a6a6a; font-size: 20px; line-height: 1.7; margin: 0 auto 28px; max-width: 680px; }
+      .bank-details { border-top: 1px solid #e8dfd3; display: grid; gap: 14px; margin: 0 auto; max-width: 620px; padding-top: 24px; text-align: left; }
+      .bank-row { align-items: baseline; display: grid; gap: 16px; grid-template-columns: 130px 1fr; }
+      .bank-label { color: var(--gold); font: 600 13px/1.3 var(--sans); letter-spacing: 2px; text-transform: uppercase; }
+      .bank-value { color: var(--deep); font: 500 21px/1.3 var(--serif); overflow-wrap: anywhere; }
+
       footer { padding: 42px 0 45px; background: #202e2c; color: #e3e2dc; }
       .footer-grid { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
       footer h2 { font: 500 44px/.9 var(--display); text-transform: uppercase; margin: 0; }
@@ -216,7 +225,7 @@
         .hero { min-height: 640px; }
         .hero-content { padding: 100px 0 38px; }
         h1 { font-size: clamp(49px, 15vw, 80px); }
-        .intro, .agenda, .transport, .editors, .bases, .places, .essentials { padding: 62px 0; }
+        .intro, .agenda, .transport, .editors, .bases, .places, .essentials, .gift-section { padding: 62px 0; }
         .intro-grid, .split-header, .transport-grid, .transport-notes, .essentials-grid { grid-template-columns: 1fr; gap: 22px; }
         .quick-facts { grid-column: auto; }
         .section-head { display: block; }
@@ -232,6 +241,7 @@
         .base-panel { grid-template-columns: 1fr; gap: 25px; }
         .base-intro { border-right: 0; border-bottom: 1px solid #d5dad1; padding: 0 0 23px; }
         .base-recommendation { min-height: 0; }
+        .gift-card { padding: 34px 28px; }
         .split-header p:last-child { margin-top: 0; }
         .footer-grid { display: block; }
         .footer-note { text-align: left; margin-top: 25px; }
@@ -241,6 +251,10 @@
         .fact, .fact + .fact { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px 0; }
         .fact:last-child { border-bottom: 0; }
         .hero-buttons .button { width: 100%; }
+        .gift-card { padding: 30px 20px; }
+        .gift-title { font-size: 28px; letter-spacing: 3px; }
+        .gift-message { font-size: 18px; }
+        .bank-row { gap: 4px; grid-template-columns: 1fr; text-align: center; }
       }
     </style>
   </head>
@@ -263,9 +277,9 @@
           <p class="hero-copy">Sugerencias personales para la semana de nuestra boda.</p>
           <div class="hero-buttons">
             <a class="button" href="#agenda"><i data-lucide="calendar-days" aria-hidden="true"></i> Planning</a>
-            <a class="button ghost" href="#mesas"><i data-lucide="utensils" aria-hidden="true"></i> Dónde comer</a>
-            <a class="button ghost" href="#autobus"><i data-lucide="bus-front" aria-hidden="true"></i> Autobús boda</a>
-            <a class="button ghost" target="_blank" rel="noopener" href="https://virginiayjose.com/#travel"><i data-lucide="landmark" aria-hidden="true"></i> IBAN</a>
+            <a class="button" href="#mesas"><i data-lucide="utensils" aria-hidden="true"></i> Dónde comer</a>
+            <a class="button" href="#autobus"><i data-lucide="bus-front" aria-hidden="true"></i> Autobús boda</a>
+            <a class="button" href="#iban"><i data-lucide="landmark" aria-hidden="true"></i> IBAN</a>
           </div>
         </div>
       </section>
@@ -602,6 +616,25 @@
             <button class="button" id="calendar-download"><i data-lucide="download" aria-hidden="true"></i> Descargar .ics</button>
             <p class="calendar-status" id="calendar-status" aria-live="polite"></p>
           </aside>
+        </div>
+      </section>
+
+      <section class="gift-section" id="iban" aria-labelledby="iban-title">
+        <div class="wrap">
+          <div class="gift-card">
+            <h2 class="gift-title" id="iban-title">Vuestra presencia es nuestro regalo</h2>
+            <p class="gift-message">Compartir este día con vosotros es lo que más ilusión nos hace. Si además queréis acompañarnos con un detalle para nuestra celebración y la vida que empezamos juntos, podéis hacerlo a través de la cuenta indicada abajo.</p>
+            <div class="bank-details">
+              <div class="bank-row">
+                <span class="bank-label">IBAN</span>
+                <span class="bank-value">IT54G0306234210000003230999</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">Titulares</span>
+                <span class="bank-value">Virginia Vinci, Jose Luis Risquez Rosillo</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
